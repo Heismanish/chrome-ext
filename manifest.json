@@ -1,0 +1,11 @@
+{
+  "name": "My first chrome extension",
+  "version": "1.0.0",
+  "description": "It shows you current cricket matches and their status ",
+  "manifest_version": 3,
+  "author": "Manish Kumar Gupta",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "My chrome extension"
+  }
+}
