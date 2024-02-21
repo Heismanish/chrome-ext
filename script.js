@@ -17,9 +17,9 @@ const getMatchData = async () => {
     }
 
     const matchInfo = matchesList.map((data) => {
-      return `${data.name}, ${data.status}`;
+      return { name: data.name, status: data.status };
     });
-
+    console.log(matchInfo);
     return matchInfo;
   } catch (error) {
     console.error(error);
@@ -28,6 +28,11 @@ const getMatchData = async () => {
 
 getMatchData().then((matchInfo) => {
   const list = document.getElementById("matches");
-  list.innerHTML = matchInfo.map((data) => `<li>${data}</li>`);
+  list.innerHTML = matchInfo
+    .map((data) => {
+      console.log(data);
+      return `<li id="match-box" class="match-box"><p class="match-name">${data.name}</p> <p class="match-status"> ${data.status}</p></li>`;
+    })
+    .join("");
   console.log(matchInfo);
 });
